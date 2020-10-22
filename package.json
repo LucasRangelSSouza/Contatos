@@ -9,11 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
-<<<<<<< Updated upstream
-    "expo": "^39.0.3",
-=======
     "expo": "~39.0.2",
->>>>>>> Stashed changes
     "expo-status-bar": "~1.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",

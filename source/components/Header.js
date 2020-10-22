@@ -14,7 +14,7 @@ const Header = (props)=>(
 const Estilos = StyleSheet.create({
     
     container : {
-        marginTop: 10,
+        marginTop: 20,
         backgroundColor: '#3711C0',
         alignItems: 'center',
         justifyContent: 'center',
