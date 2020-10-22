@@ -7,24 +7,35 @@ import axios from  'axios';
 
 
 export default class App extends React.Component {
-  
+  constructor(props){
+    super(props);
+    this.state = {
+      pessoas: []
+    }
+
+  };
+
+  componentDidMount(){
+    axios.get('https://randomuser.me/api/?nat=br&results=5').then( response =>{
+      const { results} = response.data;
+      this.setState({
+        pessoas: results
+      });
+    } )
+  }
 
   renderList(){
 
-    axios.get('https://randomuser.me/api/?nat=br&results=5').then( response =>{
-      console.log(response.data.results);
-    }
+    const elementos = this.state.pessoas.map((pessoa)=>{
+      return <Text key={pessoa.name.first}>{pessoa.name.first}</Text>;
 
-    )
+    });
 
-      const elementosLista = nomes.map((nome,i)=>{
-        return <Text key={i}>{nome}</Text>
-      })
+    return elementos;
 
-      return  elementosLista;
-  }
-
-  render() {   
+  } 
+  
+  render() {    
     return (
       <View>
         <Header titulo="Contatos"/>
