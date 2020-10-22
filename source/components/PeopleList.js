@@ -7,7 +7,7 @@ const PeopleList = props=>{
     const {listaDePessoas} = props;
     const elementos = listaDePessoas.map((pessoa)=>{
     
-        return(<PeopleListItems pessoa={pessoa}/> );
+        return(<PeopleListItems key={pessoa.name.first} pessoa={pessoa}/> );
     });
      
     return (<View style={estilo.container}>{elementos}</View>);
@@ -15,7 +15,7 @@ const PeopleList = props=>{
 
 const estilo = StyleSheet.create({
     container : {
-        backgroundColor: '#e6e8eb'
+        backgroundColor: '#e6e8eb',
 
     },
 

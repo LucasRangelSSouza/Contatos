@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native'
-
+import {capitalize} from '../util'
 
 
 const Header = (props)=>(
 
     <View style={Estilos.container}>
-        <Text style={Estilos.titulo}>{ props.titulo }</Text>
+        <Text style={Estilos.titulo}>{ capitalize(props.titulo) }</Text>
     </View>
 
 );

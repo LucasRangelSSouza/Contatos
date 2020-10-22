@@ -1,22 +1,30 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import {capitalize} from '../util'
+
+
 
 const PeopleListItems = props=>{
     const{pessoa} = props;
-    const {title} = pessoa.name;
-    const {first} = pessoa.name;
-    const {last} = pessoa.name;
+    const {title,first,last} = pessoa.name;
+    const {thumbnail} = pessoa.picture;
 
     return(
-        <View style={estilo.line}>
-            <Text style={estilo.texto} >{title}    {first} {last}</Text>
-        </View>
+        <TouchableOpacity onPress={()=>{
+
+            
+        }}>
+            <View style={estilo.line}>
+                <Image style={estilo.avatar} source={{uri: thumbnail}}/>
+                <Text style={estilo.texto} >{`${title}    ${first} ${last}`}</Text>
+            </View>
+        </TouchableOpacity>
     );
 }
 
 
 
-const estilo = StyleSheet.create({
+const estilo = StyleSheet.create({ 
    
     line :{
         height:60,
@@ -29,6 +37,15 @@ const estilo = StyleSheet.create({
     texto:{
         fontSize : 20,
         paddingLeft: 15,
+        flex: 6,
+    },
+    
+    avatar:{
+        marginLeft: 15,
+        aspectRatio: 1,
+        flex: 1,
+        borderRadius: 50
+
     }
 
 
