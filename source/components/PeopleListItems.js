@@ -5,14 +5,14 @@ import {capitalize} from '../util'
 
 
 const PeopleListItems = props=>{
-    const{pessoa} = props;
+    const{pessoa,onPress} = props;
     const {title,first,last} = pessoa.name;
     const {thumbnail} = pessoa.picture;
 
     return(
         <TouchableOpacity onPress={()=>{
+           onPress({pessoa});
 
-            
         }}>
             <View style={estilo.line}>
                 <Image style={estilo.avatar} source={{uri: thumbnail}}/>
