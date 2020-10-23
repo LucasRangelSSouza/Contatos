@@ -9,13 +9,14 @@ const PeopleList = props=>{
     return (
     <FlatList 
         style={estilo.container}
-        data ={listaDePessoas}
+        data ={listaDePessoas.sort((a,b)=> a.name.first.localeCompare(b.name.first))}
         renderItem={({item})=>(
             <PeopleListItems
                 pessoa={item}
                 onPress={onPress}
             />
         )}
+        keyExtractor={item=>item.login.sha256}
     />
     );
 };
